@@ -20,6 +20,11 @@ jobs:
           while IFS= read -r -d '' package; do
             found=1
             dir="$(dirname "$package")"
+            npm install --package-lock-only --ignore-scripts --no-audit --prefix "$dir"
+            npm audit --audit-level=high --prefix "$dir"
+          done < <(find . -name package.json -not -path '*/node_modules/*' -not -path './.git/*' -print)
+          if [ "$found" -eq 0 ]; then
+            echo "No npm projects found."
             echo "::group::Audit $dir"
             pushd "$dir" >/dev/null
             npm install --package-lock-only --ignore-scripts --no-audit --no-fund
