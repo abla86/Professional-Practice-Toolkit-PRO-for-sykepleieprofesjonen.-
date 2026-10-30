@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Professional Practice Toolkit PRO",
+  "description": "Early scaffold for a nursing professional-practice toolkit. The current application screen is empty and no clinical workflow is implemented.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
